@@ -1,3 +1,4 @@
 #! /bin/sh
 set -e
 /lib/udev/logo-net-compat.sh start
+ls -1 /etc/sysconfig/network/* || true

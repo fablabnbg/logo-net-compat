@@ -20,10 +20,10 @@
 # /lib/udev/logo-net-compat.sh stop	
 # 	to remove the udev rule and remove empty files in $netdir
 
-udevdir=/lib/udev/
+udevdir=/lib/udev
 udevfile=$udevdir/rules.d/98-logo-net-compat.rules
 if [ "$1" = 'start' ]; then
-  echo "ACTION=\"add|remove\", SUBSYSTEM==\"net\", PROGRAM=\"$udevdir/logo-net-compat.sh\"" > $udevfile
+  echo "ACTION==\"add|remove\", SUBSYSTEM==\"net\", PROGRAM=\"$udevdir/logo-net-compat.sh\"" > $udevfile
 fi
 
 # make sure the folder exists

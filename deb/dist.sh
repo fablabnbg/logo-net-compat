@@ -5,7 +5,7 @@
 
 name=logo-net-compat
 vers=$(date +%Y%m%d)
-rel=1
+rel=3
 url=http://github.com/fablabnbg/logo-net-compat
 requires="bash"
 
