@@ -2,7 +2,7 @@
 #
 # logo-net-compat.sh
 # (C) 2018 Juergen Weigert <juergen@fabmail.org>
-# Distrbute under GPL-2.0 or ask.
+# Distrbute under the MIT License or ask.
 #
 # The LOGO software expects these config files in the openSUSE style. 
 # This script is a workaround to make the LOGO software work also on
@@ -20,9 +20,10 @@
 # /lib/udev/logo-net-compat.sh stop	
 # 	to remove the udev rule and remove empty files in $netdir
 
-udevfile=/lib/udev/rules.d/98-logo-net-compat.rules
+udevdir=/lib/udev/
+udevfile=$udevdir/rules.d/98-logo-net-compat.rules
 if [ "$1" = 'start' ]; then
-  echo "ACTION=\"add|remove\", SUBSYSTEM==\"net\", PROGRAM=\"$0\"" > $udevfile
+  echo "ACTION=\"add|remove\", SUBSYSTEM==\"net\", PROGRAM=\"$udevdir/logo-net-compat.sh\"" > $udevfile
 fi
 
 # make sure the folder exists
@@ -39,6 +40,7 @@ fi
 # create (again) those files that should exist.
 for dev in $(ls /sys/class/net); do 
   test $dev = 'lo' && continue; 
-  touch $netdir/ifcg-$dev
+  touch $netdir/ifcfg-$dev
 done
 
+exit 0

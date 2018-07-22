@@ -1,0 +1,6 @@
+The LOGO software expects thes config files in the openSUSE style.
+This script is a workaround to make the LOGO software work also on
+popular Ubuntu and Debian systems.
+
+logo-net-compat immitates the config files as seen in openSUSE.
+
